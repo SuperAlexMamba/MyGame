@@ -11,6 +11,7 @@ import UIKit
 enum GameResult{
     case win, lose, play
 }
+var gameResult: GameResult = .play
 
 func checkResultStatus(in view: UIViewController){
     

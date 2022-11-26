@@ -17,6 +17,7 @@
 		DDC737C02916C70900CC8D70 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC737BF2916C70900CC8D70 /* Model.swift */; };
 		DDC737C22917534A00CC8D70 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC737C12917534A00CC8D70 /* GameState.swift */; };
 		DDC737C42917542600CC8D70 /* Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC737C32917542600CC8D70 /* Support.swift */; };
+		DDD973BA2932B01C00317DDA /* ModelForShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD973B92932B01C00317DDA /* ModelForShop.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		DDC737BF2916C70900CC8D70 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		DDC737C12917534A00CC8D70 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		DDC737C32917542600CC8D70 /* Support.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Support.swift; sourceTree = "<group>"; };
+		DDD973B92932B01C00317DDA /* ModelForShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelForShop.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				DDC737AF2916C6D300CC8D70 /* MainView.swift */,
 				DD43BDB22921AD3000A1D60D /* LoseView.swift */,
 				DDC737BF2916C70900CC8D70 /* Model.swift */,
+				DDD973B92932B01C00317DDA /* ModelForShop.swift */,
 				DDC737C32917542600CC8D70 /* Support.swift */,
 				DDC737C12917534A00CC8D70 /* GameState.swift */,
 				DDC737B12916C6D300CC8D70 /* Main.storyboard */,
@@ -155,6 +158,7 @@
 				DDC737C42917542600CC8D70 /* Support.swift in Sources */,
 				DDC737AC2916C6D300CC8D70 /* AppDelegate.swift in Sources */,
 				DDC737C22917534A00CC8D70 /* GameState.swift in Sources */,
+				DDD973BA2932B01C00317DDA /* ModelForShop.swift in Sources */,
 				DDC737AE2916C6D300CC8D70 /* SceneDelegate.swift in Sources */,
 				DDC737C02916C70900CC8D70 /* Model.swift in Sources */,
 			);

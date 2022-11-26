@@ -1,23 +1,13 @@
 import Foundation
 import UIKit
 
-var gameResult: GameResult = .play
-
-var pistol = Weapon(name: "Pistol", damage: 15 )
-var shootgun = Weapon(name: "ShootGun", damage: 25)
-var knife = Weapon(name: "Knife", damage: 5)
-var grenade = Weapon(name: "Grenade", damage: 50)
-
-var weapons: [Weapon] = [pistol,shootgun,knife,grenade]
-
-var healthKits = [1,1]
-
 struct Player: Entity {
     
     var weapon: Weapon
     var isDead: Bool = false
     let name: String
     var health: Int = 100
+    var healthKits = [1,1]
     
     mutating func takeHealthKit(for button: UIButton) { // аптечка (их у игрока должно быть 2)
         health += 20
@@ -69,9 +59,6 @@ class Enemy: Entity{
     }
 }
 
-var player = Player(weapon: shootgun , name: "player")
-var enemy = Enemy(weapon: weapons.randomElement()!, name: "enemy")
-
 func updateLabels(_ playerLabel: UILabel, _ enemyLabel: UILabel, _ player: Player, _ enemy: Enemy, _ levelLabel: UILabel ){
     playerLabel.text = String(player.health)
     enemyLabel.text = String(enemy.health)
@@ -82,12 +69,9 @@ func resetGame(in view: UIViewController, for player: inout Player, and enemy: i
     
     if gameResult == .lose {
         view.view.backgroundColor = .white
-        
+        level = 0
         player.health = 100
         player.isDead = false
         enemy.health = 100
-        
-        
     }
-    
 }
