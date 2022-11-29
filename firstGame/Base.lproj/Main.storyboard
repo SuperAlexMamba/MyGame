@@ -3,12 +3,13 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="firstGame" customModuleProvider="target" sceneMemberID="viewController">
@@ -69,13 +70,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LVL 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzK-cE-NDo">
-                                <rect key="frame" x="171" y="90" width="75" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwH-4F-a6b">
                                 <rect key="frame" x="20" y="657" width="92" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -87,27 +81,36 @@
                                     <action selector="takeHealthKit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ydV-Vk-phc"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LVL 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzK-cE-NDo">
+                                <rect key="frame" x="129" y="91" width="148" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="9fg-S1-ytG"/>
+                    <tabBarItem key="tabBarItem" id="9fg-S1-ytG">
+                        <imageReference key="image" image="scribble.variable" catalog="system" symbolScale="default"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="healthKit" destination="cwH-4F-a6b" id="JgC-yW-weW"/>
                         <outlet property="labelOfEnemyHP" destination="hH0-0n-1Es" id="TOU-5b-nmf"/>
                         <outlet property="labelOfPlayerHP" destination="vJU-XX-0Bw" id="GR1-TQ-QK3"/>
                         <outlet property="levelLabel" destination="yzK-cE-NDo" id="Q0I-hn-Pbk"/>
-                        <segue destination="jSN-OF-Tn1" kind="presentation" identifier="Lose" modalPresentationStyle="fullScreen" id="imN-cr-Cmk"/>
+                        <segue destination="jSN-OF-Tn1" kind="presentation" identifier="Lose" modalPresentationStyle="fullScreen" id="xzs-Ls-RS8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1116" y="419"/>
+            <point key="canvasLocation" x="1113" y="48"/>
         </scene>
         <!--Lose View-->
         <scene sceneID="OQa-ET-hfX">
             <objects>
-                <viewController id="jSN-OF-Tn1" customClass="LoseView" customModule="firstGame" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jSN-OF-Tn1" customClass="LoseView" customModule="firstGame" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fU2-u4-1sc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -139,8 +142,8 @@
                                     <action selector="tryAgain:" destination="jSN-OF-Tn1" eventType="touchUpInside" id="ezr-11-cje"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odR-22-1Qu">
-                                <rect key="frame" x="271" y="274" width="11" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odR-22-1Qu">
+                                <rect key="frame" x="271" y="274" width="30" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -156,7 +159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xsI-bF-3it" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2055" y="48"/>
+            <point key="canvasLocation" x="1994" y="48"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="DEl-SQ-bsl">
@@ -177,7 +180,7 @@
             </objects>
             <point key="canvasLocation" x="190" y="48"/>
         </scene>
-        <!--Item-->
+        <!--View Controller-->
         <scene sceneID="hyG-G1-3y7">
             <objects>
                 <viewController id="v8i-Xt-7dI" sceneMemberID="viewController">
@@ -187,14 +190,16 @@
                         <viewLayoutGuide key="safeArea" id="FEC-HP-LOw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="zKR-25-aZY"/>
+                    <tabBarItem key="tabBarItem" title="" image="creditcard.fill" catalog="system" id="zKR-25-aZY"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H6l-xr-YNT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1116" y="-300"/>
+            <point key="canvasLocation" x="1112" y="-719"/>
         </scene>
     </scenes>
     <resources>
+        <image name="creditcard.fill" catalog="system" width="128" height="88"/>
+        <image name="scribble.variable" catalog="system" width="128" height="119"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

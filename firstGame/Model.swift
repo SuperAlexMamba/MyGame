@@ -3,11 +3,11 @@ import UIKit
 
 struct Player: Entity {
     
-    var weapon: Weapon
-    var isDead: Bool = false
-    let name: String
-    var health: Int = 100
-    var healthKits = [1,1]
+    var weapon: Weapon   // оружие
+    var isDead: Bool = false // умер
+    let name: String // имя
+    var health: Int = 100 // жизни
+    var healthKits = [1,1] // аптечки (две)
     
     mutating func takeHealthKit(for button: UIButton) { // аптечка (их у игрока должно быть 2)
         health += 20
@@ -23,10 +23,11 @@ struct Player: Entity {
 
         if enemy.health <= 0 {
             enemy.isDead = true
+            diedEnemyes += 1
             gameResult = .win
             print("Enemy \(enemy.name) is dead from \(weapon.name)!")
         }
-    }   /* если у энеми меньше или равно 0 хп то он умирает */
+    }         /* если у энеми меньше или равно 0 хп то он умирает */
 }
 
 class Enemy: Entity{
@@ -59,7 +60,12 @@ class Enemy: Entity{
     }
 }
 
-func updateLabels(_ playerLabel: UILabel, _ enemyLabel: UILabel, _ player: Player, _ enemy: Enemy, _ levelLabel: UILabel ){
+func updateLabels(_ playerLabel: UILabel,
+                  _ enemyLabel: UILabel,
+                  _ player: Player,
+                  _ enemy: Enemy,
+                  _ levelLabel: UILabel ){
+    
     playerLabel.text = String(player.health)
     enemyLabel.text = String(enemy.health)
     levelLabel.text = "LVL \(level)"
@@ -70,8 +76,10 @@ func resetGame(in view: UIViewController, for player: inout Player, and enemy: i
     if gameResult == .lose {
         view.view.backgroundColor = .white
         level = 0
+        diedEnemyes = 0
         player.health = 100
         player.isDead = false
         enemy.health = 100
-    }
+        enemy.weapon = knife // тут определяется оружие врага после смерти игрока
+    }                                           // сбрасываем его до ножа
 }

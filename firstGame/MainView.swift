@@ -16,8 +16,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         gameResult = .play
+//        updateLabels(labelOfPlayerHP, labelOfEnemyHP, player, enemy, levelLabel)
     }
     
     @IBAction func shootAction(_ sender: UIButton) {

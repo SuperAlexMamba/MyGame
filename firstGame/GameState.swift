@@ -21,9 +21,10 @@ func checkResultStatus(in view: UIViewController){
         level += 1
     case .lose:
         view.view.backgroundColor = .systemRed
-        view.present(LoseView(), animated: true)
+        view.performSegue(withIdentifier: "Lose", sender: nil)
         level = 0
     case .play:
         view.view.backgroundColor = .white
+        diedEnemyes = 0
     }
 }

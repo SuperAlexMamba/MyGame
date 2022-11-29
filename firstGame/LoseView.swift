@@ -10,14 +10,18 @@ import UIKit
 class LoseView: UIViewController {
     
     @IBOutlet weak var diedEnemyesCount: UILabel!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        diedEnemyesCount.text = String(diedEnemyes)
     }
     
     @IBAction func tryAgain(_ sender: UIButton) {
-    
+        resetGame(in: ViewController() , for: &player, and: &enemy)
+        diedEnemyesCount.text = String(diedEnemyes)
+        let mmm = ViewController()
+        mmm.view.backgroundColor = .white
+//        updateLabels(mainView.labelOfPlayerHP, mainView.labelOfEnemyHP, player, enemy, mainView.levelLabel)
         dismiss(animated: true)
     }
     // MARK: - Navigation
